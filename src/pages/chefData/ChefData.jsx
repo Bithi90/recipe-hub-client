@@ -33,7 +33,7 @@ const ChefData = () => {
                         <p>{number_of_recipe}</p>
                         <p>{likes}<FaHeart /></p>
                     </div>
-                    <Button variant="warning">Go somewhere</Button>
+                    <Button variant="warning">Add to Favourite <FaHeart></FaHeart> </Button>
 
                 </Card.Body>
             </Card>
