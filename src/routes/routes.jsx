@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/category/Category";
-import NewsLayout from "../layout/NewsLayout/NewsLayout";
+import NewsLayout from "../layout/ChefLayout/ChefLayout";
 import ChefData from "../pages/chefData/ChefData";
+import ChefLayout from "../layout/ChefLayout/ChefLayout";
 
 
 const router = createBrowserRouter([
@@ -26,11 +27,13 @@ const router = createBrowserRouter([
     },
     {
         path: 'chefData',
-        element:<NewsLayout></NewsLayout>,
+        element:<ChefLayout></ChefLayout>,
         children: [
             {
                 path:':id',
-                element:<ChefData></ChefData>
+                element:<ChefData></ChefData>,
+                // loader;({params}) => fetch('')
+
             }
         ]
     }

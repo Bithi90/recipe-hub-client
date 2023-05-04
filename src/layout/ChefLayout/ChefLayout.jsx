@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
-const NewsLayout = () => {
+const ChefLayout = () => {
     return (
         <div>
             <h2>this is another layout</h2>
@@ -8,4 +9,4 @@ const NewsLayout = () => {
     );
 };
 
-export default NewsLayout;
+export default ChefLayout;

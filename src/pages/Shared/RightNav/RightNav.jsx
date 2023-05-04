@@ -16,7 +16,7 @@ const RightNav = () => {
 
 
     return (
-        <div>
+        <div className='ms-4'>
             <h3>Categories :</h3>
             <div className='ps-4'>
                 {
