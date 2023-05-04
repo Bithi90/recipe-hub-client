@@ -10,7 +10,7 @@ const Category = () => {
 
     return (
         <div className='me-4 ps-4'>
-            <h3> categories :{categoryData.length}</h3>
+            {id&&<h3> categories :{categoryData.length}</h3>}
             {
                 categoryData.map(data => <Chef
                     key={data.id}

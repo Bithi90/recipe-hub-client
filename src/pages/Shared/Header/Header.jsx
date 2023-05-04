@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
     return (
         <div>
             <div>
@@ -10,18 +12,23 @@ const Header = () => {
             </div>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
-        
+
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                           <Link className='ms-2 text-black text-decoration-none' to="/">Home</Link>
+                            <Link className='ms-2 text-black text-decoration-none' to="/category/0">Home</Link>
                             <Link className='ms-2 text-black text-decoration-none'>About</Link>
                             <Link className='ms-2 text-black text-decoration-none'>Blog</Link>
-                            
+
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Profile</Nav.Link>
-                            <Button variant="warning">Login</Button>
+                           
+                            {user ?
+                                <Button variant="warning">Logout</Button> :
+                            <Link to="/login">
+                                <Button variant="warning">Login</Button>
+                            </Link>}
+
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
