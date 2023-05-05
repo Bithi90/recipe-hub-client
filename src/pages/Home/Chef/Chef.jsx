@@ -28,7 +28,7 @@ const Chef = ({ data }) => {
                     <p>{number_of_recipe}</p>
                     <p>{likes}<FaHeart /></p>
                 </div>
-                <Button variant="primary">View Recipes...</Button>
+                <Link to={`/chefData/${id}`}><Button variant="primary">View Recipes...</Button></Link>
             </Card.Body>
         </Card>
         

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
@@ -7,6 +7,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 const Register = () => {
 
     const {createUser} = useContext(AuthContext);
+    const [error , setError] =useState('');
 
     const handleRegister =  event => {
         event.preventDefault();
@@ -23,7 +24,8 @@ const Register = () => {
                 console.log(createdUser);
             })
             .catch(error =>{
-                console.log(error);
+                console.log(error.message);
+                setError(error.message);
             })
     }
 
@@ -59,17 +61,18 @@ const Register = () => {
                 Register
             </Button>
             <br />
-
             <Form.Text className="text-secondary">
                  Have an Account?
                     <Link to="/login">Login</Link>
                 </Form.Text>
+                <br />
             <Form.Text className="text-success">
                     
                 </Form.Text>
-            <Form.Text className="text-denger">
-                    
-                </Form.Text>
+                <br />
+            <p className="text-danger">
+                    {error}
+                </p>
         </Form>
     </Container>
     );

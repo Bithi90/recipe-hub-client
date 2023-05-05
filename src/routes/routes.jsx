@@ -59,6 +59,7 @@ const router = createBrowserRouter([
                  loader:({params}) => fetch(`http://localhost:5000/chefData/${params.id}`)
 
             }
+            
         ]
     }
 ])
