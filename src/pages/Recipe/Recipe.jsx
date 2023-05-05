@@ -5,7 +5,7 @@ const Recipe = ({ recipe }) => {
     const { recipe_name, cooking_method, ingredient, recipe_img } = recipe;
 
     return (
-        <div  className=' border border-black p-4 mb-4'>
+        <div  className=' border border-black p-4 mb-4 sm'>
             <div className=' text-center mb-4'>
                 <h2>{recipe_name}</h2>
             </div>
