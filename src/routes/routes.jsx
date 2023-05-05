@@ -9,6 +9,7 @@ import LayoutOfLogin from "../layout/LayoutOfLogin";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 
 
 
@@ -47,6 +48,7 @@ const router = createBrowserRouter([
                 element:<Category></Category>,
                 loader:({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
             }
+           
         ]
     },
     {
@@ -60,7 +62,12 @@ const router = createBrowserRouter([
 
             }
             
+            
         ]
+    },
+    {
+        path:'*',
+        element:<ErrorPage></ErrorPage>
     }
 ])
 
