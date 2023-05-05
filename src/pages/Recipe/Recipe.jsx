@@ -11,7 +11,7 @@ const Recipe = ({ recipe }) => {
             </div>
 
             <div className=' d-flex justify-content-center'>
-                <img style={{height:'400px'}} className='w-25 me-4' src={recipe_img} alt="" />
+                <img style={{height:'400px'}} className='w-25 me-4 img-fluid' src={recipe_img} alt="" />
                 <div className='border border-black p-4 me-4 text-center pt-4 '>
                     <h3>Ingredient</h3>
                     <p>{ingredient}</p>

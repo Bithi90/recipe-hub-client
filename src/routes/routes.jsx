@@ -10,6 +10,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
+import Blog from "../pages/Home/Blog/Blog";
 
 
 
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Navigate to="/category/0"></Navigate>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
+               
             },
             {
                 path:'/login',
@@ -37,12 +43,6 @@ const router = createBrowserRouter([
         path: 'category',
         element : <Main></Main>,
         children  :[
-            // {
-            //     path:'/',
-            //     element:<Category></Category>,
-            //     loader: () => fetch('http://localhost:5000/chefData')
-
-            // },
             {
                 path: ':id',
                 element:<Category></Category>,

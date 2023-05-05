@@ -1,10 +1,10 @@
 import React from 'react';
-import errorPage from '../../../assets/divi-404-page-template-desktop-preview.gif';
+
 
 const ErrorPage = () => {
     return (
         <div className='fixed-top'>
-            <img className='w-100' src={errorPage} alt="" />
+            <img className='w-100' src="https://imagizer.imageshack.com/img924/8921/u4wiNV.gif" alt="" />
            
         </div>
     );
