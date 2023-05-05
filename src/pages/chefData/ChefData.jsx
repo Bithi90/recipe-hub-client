@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Shared/Header/Header';
 import { Button, Card, CardImg } from 'react-bootstrap';
 import Footer from '../Shared/Footer/Footer';
 import { useLoaderData } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import Recipe from '../Recipe/Recipe';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -18,6 +21,15 @@ const ChefData = () => {
 
     const {recipes, chefs_img, name, likes, years_of_experience, details,
         number_of_recipe } = recipeData;
+
+        const [addToFvrt , setAddToFvrt] = useState(false);
+
+        const handleFavouriteBtn = event => {
+            event.currentTarget.disabled = true;
+            toast('added to your favourite');
+          
+        };
+
     return (
         <div>
 
@@ -33,8 +45,8 @@ const ChefData = () => {
                         <p>{number_of_recipe}</p>
                         <p>{likes}<FaHeart /></p>
                     </div>
-                    <Button variant="warning">Add to Favourite <FaHeart></FaHeart> </Button>
-
+                    <Button  onClick={handleFavouriteBtn} variant="warning">Add to Favourite <FaHeart></FaHeart> </Button>
+                    <ToastContainer />
                 </Card.Body>
             </Card>
             <div>
